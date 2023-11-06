@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열과 반복문</h1>
+    <button id="printBtn">출력하기</button>
+    <button id="printBtn2">출력하기2</button>
+    <ul id="nameList"></ul>
+
+    <script>
+        let names = ["김구라","해골","원숭이","주뎅이","덩어리"];
+
+        /** 
+         * 문제
+         * 출력하기 버튼을 눌렀을 때 names 배열에 저장된 이름(문자열)이 순서대로 콘솔창에 출력되도록 코딩하기
+         * 
+         * 코드
+         * document.querySelector("#printBtn").addEventListener("click", function(){
+
+            for(let i=0; i<5; i++){
+                console.log(names[i]);
+            };
+        })
+
+         * 이 코드에는 문제가 있다. 지금은 names 값이 보이기에 i 최대치를 숫자로 기재할 수 있었지만
+         * 현장에서는 db에서 가져오는 경우가 많다. 몇 개인지 알 수 없다.
+         * 이럴 때 사용하는 것이 'length'다.
+        */
+
+        document.querySelector("#printBtn").addEventListener("click", function(){
+
+            for(let i=0; i<names.length; i++){
+                console.log(names[i]);
+            };
+        })
+
+        /** 
+         * 문제2
+         * 출력하기2 버튼을 눌렀을 때 names배열에 저장된 이름을 이용해서 ul 요소에 li를 순서대로 출력하세요
+        */
+
+        document.querySelector("#printBtn2").addEventListener("click", function(){
+                
+            for(let i=0; i<names.length; i++){
+                let li = document.createElement("li");
+                li.innerText = names[i];
+                document.querySelector("#nameList").append(li)
+            }
+
+        })
+
+    </script>
+</body>
+</html>

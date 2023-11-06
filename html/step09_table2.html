@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        caption : 테이블 제목
+        colgroup : 칼럼 속성
+        thead : 테이블 기준 칼럼 정보
+        tbody : row 요소들
+        tfoot : row 데이터 합산 등의 최종 결론
+        tr : table row
+        th : table row head
+        td : table row body
+    -->
+    <h1>table 요소 사용하기</h1>
+    <table border="1">
+        <caption>회원 목록</caption>
+        <colgroup>
+            <col widtH="100">
+            <col width="100">
+            <col width="100">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>김구라</td>
+                <td>노량진</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>해골</td>
+                <td>행신동</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>tfoot 이 있는 table</h1>
+    <table border="1" class="my-table">
+        <caption>GS25 현금, 카드 매출 내역</caption>
+        <colgroup>
+            <col width="200">
+            <col width="100">
+            <col width="100">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>상품명</th>
+                <th>현금</th>
+                <th>카드</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td>4,300원</td>
+                <td>800원</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>삼각김밥</td>
+                <td>800</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>도시락</td>
+                <td>3,500</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>박카스</td>
+                <td>0</td>
+                <td>800</td>
+            </tr>
+        </tbody>
+    </table>  
+    
+</body>
+</html>

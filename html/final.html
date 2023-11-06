@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 최종연습</title>
+    <style>
+        #join{
+            border: black solid 2px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        #join > p > input{
+            width: 200px;
+        }
+        .joinList > th{
+            display: block;
+            padding: 5px;
+            border-right: solid 1px;
+        }
+        .joinEditText > td{
+            display: block;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function idCheckButton(){
+            alert("가상으로 존재여부 확인기능")
+        }
+        function successButton(){
+            alert("가입절차 버튼")
+        }
+    </script>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <div id="join">
+        <h2>테이블 이용후</h2>
+
+        <table>
+            <caption>필수 입력사항</caption>
+            <colgroup>
+                <col width="100">
+                <col width="100">
+            </colgroup>
+
+            <tr class="joinList">
+                <th>ID</th>
+                <th>비밀번호</th>
+                <th>비밀번호 확인</th>
+                <th>이메일</th>
+            </tr>
+
+            <tr class="joinEditText">
+                <td class="">
+                    <input type="text" placeholder="ID 를 작성해주세요">
+                    <button onclick="idCheckButton()">중복확인</button>
+                </td>
+                <td>
+                    <input type="text" placeholder="8자 이상 입력해주세요">
+                </td>
+                <td>
+                    <input type="text" placeholder="8자 이상 입력해주세요">
+                </td>
+                <td>
+                    <input type="text" placeholder="이메일 형식에 맞게 작성해주세요">
+                </td>
+            </tr>
+        </table>
+
+
+        <!-- 경계선 -->
+
+        <h2>테이블 이용전</h2>
+        <h3>필수 입력사항</h3>
+        <p>
+            ID
+            <input type="text" placeholder="ID 를 작성해주세요">
+            <button onclick="idCheckButton()">중복확인</button>
+        </p>
+        <p>
+            비밀번호
+            <input type="text" placeholder="8자 이상 입력해주세요">
+        </p>
+        <p>
+            비밀번호 확인
+            <input type="text" placeholder="8자 이상 입력해주세요">
+        </p>
+        <p>
+            이메일
+            <input type="text" placeholder="이메일 형식에 맞게 작성해주세요">
+        </p>
+    </div>
+    <button onclick="successButton()">가입하기</button>
+</body>
+</html>

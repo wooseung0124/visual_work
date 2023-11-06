@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_Example.html</title>
+</head>
+<body>
+    <h1>이벤트 리스너 함수 pattern</h1>
+
+        작성하기 편한 코딩형식
+    <button onclick="send()">전송</button>
+    <button id="senBtn">전송</button>
+
+    <script>
+        function send(){
+            console.log("전송합니다.");
+        };
+
+        document.querySelector("#sendBtn").addEventListener("click", function(){
+            console.log("전송합니다.2")
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>fuction type의 매개 변수</h1>
+    <script>
+        //두개의 매개 변수를 갖는 함수
+        let printSum = function(num1, num2){
+            let sum = num1+num2;
+            console.log(num1+" 과 "+num2+"의 합은 "+sum);
+        }
+
+        // 함수를 호출하면서 값 2개 전달하기
+        printSum(10, 20);
+
+        // function(f){}에 있는 f는 파라미터(매개변수)라고 부른다.
+        let useFunc=function(f){
+            f();
+        };
+
+        function greet(){
+            console.log("f의 최종함수")
+        };
+
+        useFunc(greet);
+        
+
+        useFunc(function(){
+            // 가상의 전송하는 작업
+            console.log("전송합니다.");
+        });
+
+        useFunc(()=>{
+            // 가상의 업데이트 작업
+            console.log("수정합니다");
+        });
+
+        /** 
+         * 웹브라우저는 함수에 전달되는 매개변수의 타입을 강제전달이 불가하다.
+         * 즉, 전달하고자 하는 데이터의 타입과 전달받을 함수(function)의 데이터 타입과 일치해야 한다.
+         * 
+         * 위에 방식처럼 함수에 또 다른 함수를 호출하는 방식이 있다.
+         * 전달하고자 하는 또 다른 함수를 개발자 의도에 맞도록 적절한 시점에 실행에 옮기는 함수를 '콜백함수'라고 부른다.
+        */
+
+
+    
+    </script>
+</body>
+</html>

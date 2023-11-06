@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>문서 객체를 동적으로</h1>
+    <button id="makeBtn">만들기</button>
+    <div class="wrapper"></div>
+
+    <script>
+
+        /** 
+         * createElement 를 document 에서 실행하면 html body 내에 기본요소를 생성하는 함수
+         * 이 함수는 변수를 먼저 선언해줘야 한다. 
+         * ex) let p1 = document.createElement("p")
+         * 
+         * 그리고 기본요소에 넣을 내용을 소괄호 안에 선언한다.
+         * ex) p1.innerText="p1입니다."
+         * 
+         * 하지만 여기서 멈추면 메모리에 저장될 뿐 웹브라우저에 직접적으로 업데이트되지 않는다.
+         * 때문에 웹브라우저에 생성할 위치를 설정한 뒤, append를 통해 앞서 선언했던 변수를 적용해야 한다.
+         * ex) document.querySelector(".wrapper").append(p1)
+        */
+
+
+
+        document.querySelector("#makeBtn").addEventListener("click", function () {
+
+            // p요소를 동적으로 만들어서 참조값을 p1이라는 변수에 담기
+            let p1 = document.createElement("p");
+
+            // p요소 글씨 넣기
+            p1.innerText = "p1입니다.";
+
+            // .wrapper div에 추가하기
+            document.querySelector(".wrapper").append(p1);
+
+            // css조작하기
+            p1.style.color = "red";
+
+            // 궁금증 : 이건 .wrapper 밑에 새로운 게 생성되는 걸까? 아니면 먼저 생성한 p1 밑에 생성되는 걸까?
+            /** 
+             * 결과 : 밑에서 생성됨
+             * 나만의 생각 : 웹브라우저 로딩시점 기준으로 먼저 생성된 요소는 코드와 한 몸이 된 상태이다.
+             * 이어서 새로 등록한 코드는 로딩시점 이전에 있던 없던 코드이므로 그 밑으로 생성된다??
+             * 의문 : 그럼 id 적용해서 id 밑에 생성을 요구할 경우는?
+            */
+        })
+
+    </script>
+</body>
+
+</html>

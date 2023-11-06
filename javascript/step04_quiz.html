@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
+
+    <script>
+        /** 
+         * div를 클릭하면 클릭한 div 만 innerText 가 "clicked!"로 변경되도록 만들어라.
+        */
+
+        // document.querySelectorAll(".box").forEach(function(item){
+        //     item.addEventListener("click", function(){
+        //         item.innerText = "clicked!";
+        //     });
+        // });
+
+        /** 
+         * 코드해석
+         * document.querySelectorAll(".box").forEach(function(item)
+         * 여기서 'item'은 모든 box 요소들을 배열로 나열한 총집합체이다.
+         * 이 item에는 [div1, div2, div3, div4, div5] 가 들어있다. 이건 웹브라우저 로딩시점으로 생성된다.
+         * 
+         * item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * 이 코드는 앞에 로딩하면서 생성된 item 요소 5개가 가지고 있는 각각의 명령어로써 
+         * 로딩 시점에서 각 item별로 해당 함수가 부여된다는 의미이다.
+         * 같은 코드이지만 따지고 보면 item 별로 다른 코드가 넣어진 셈이다.
+         * 
+         * 결론 : forEach()를 통해 웹브라우저가 로딩하는 순간 밑에 코드들이 한번에 생성(준비)된다.
+         * item[0] => div1= item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * item[1] => div2= item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * item[2] => div3= item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * item[3] => div4= item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * item[4] => div5= item.addEventListener("click", function(){ item.innerText = "clicked!"; });
+         * 
+         * 그래서 별일 없이 원하는 item을 클릭할 때만 반응(실행)한 것이다.
+        */
+
+        /** 
+         * 다시 해보기
+         * div를 클릭하면 클릭한 div 만 innerText 가 "clicked!"로 변경되도록 만들어라.
+        */
+
+        // 하나씩 적용할 경우
+        // document.querySelectorAll(".box")[0].addEventListener("click",function(){});
+        // document.querySelectorAll(".box")[1].addEventListener("click",function(){});
+        // document.querySelectorAll(".box")[2].addEventListener("click",function(){});
+        // document.querySelectorAll(".box")[3].addEventListener("click",function(){});
+        // document.querySelectorAll(".box")[4].addEventListener("click",function(){});
+
+        // for문 사용한 경우
+        // let items=document.querySelectorAll(".box");
+
+        // for(let i=0; i<items.length; i++){
+        //     items[i].addEventListener("click", function(){
+        //         items[i].innerText="clicked!";
+        //     });
+        // }
+
+        // forEach로 사용한 경우
+        document.querySelectorAll(".box").forEach(function(item){
+             item.addEventListener("click", function(){
+                 item.innerText = "clicked!";
+             });
+         });
+
+         /** 
+          * 결론 : for문과 forEach의 가장 큰 차이는 눈에 띄는 가독성이다.
+          * for문의 경우 조건문만을 가지고 결과값을 자동 실행되는 코드인지 아닌지 구분하기 어렵다.
+          * 하지만 forEach를 통해 단어의 뜻을 알면 해석이 되는 것처럼 제3자의 코드, 혹은 제3자의 개발자가 타인의 코드를 접하더라도
+          * 유추, 해석이 가능하다. 이것이 '자바스크립트스럽다.'라는 것이다.
+         */
+
+    </script>
+</body>
+</html>

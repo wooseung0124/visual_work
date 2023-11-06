@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>javascript 데이터 type</h1>
+    <p>
+        <strong>function</strong> type
+    </p>
+    <button onclick="keepElephant()">코끼리 냉장고에 넣기</button>
+
+    <script>
+
+        let keepElephant = function() {
+            //코끼리를 냉장고에 넣는 작업
+            console.log("냉장고 문을 연다");
+            console.log("코끼리를 집어 넣는다");
+            console.log("냉장고 문을 닫는다");
+        };
+
+        /** 
+         *  function(){ '일괄 실행할 javascript를 작성'}
+         *  ㄴ> function(){} => 참조값이 된다.
+         * let a = function(){} : 라고 정의를 내릴 경우
+         * let a = 참조값 : 라고 볼 수 있다.
+         * 
+         * stack(스택) | heap(힙)
+         *      a      |   function(){}
+         * 
+         * 코딩시 주의
+         * 1. 콜, 호출은 데이터 결과값을 불러오는 행위: a()
+         * ㄴ> 단, 이 행위는 function(){}에서만 가능
+         * 2. 참조는 변수를 정하는 행위 : ex) let b = a;
+         * 3. 참조값을 불러오는 행위 : a
+         * 
+         * step01 수업 핵심 : 각 데이터 타입별로 호출하는 방식은 다르다.
+         * 1. object : 변수.데이터 요소 / 온점.
+         * 2. array : 변수[데이터 요소 순서] / 대괄호[]
+         * 3. function : 변수() / 소괄호()
+         * 
+         * 빌드인 함수 : 웹브라우저에서 만든 함수, ex) alert(), console(), document() 등등
+         * 
+         * undefined 타입 : 호출 이후 출력되는 '정해지지 않은 반환값'
+         * 코딩 작성시 구분하기
+         * 1. let a = alert; -> a는 function 데이터 타입
+         * 2. let a = alert(); -> a는 undefined 데이터 타입
+         * 
+         * confirm() 함수 : 알림창 형식으로 함수 내부에서 사용할 data를 전달하고 boolean 값으로 반환
+         * 
+         * 함수를 만드는 3가지 방법
+         * 1. 함수를 호출
+         * 2. 함수를 호출하면서 값을 전달
+         * ㄴ> 함수를 어떻게 설계하면 값을 전달 받을 수 있을까?
+         * 3. 함수가 되돌려주는(return) 값 사용
+         * ㄴ> 함수를 어떻게 설계하면 값을 되돌려 줄 수 있을까?
+         * 
+        */
+
+    </script>
+</body>
+
+</html>

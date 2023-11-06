@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputName" placeholder="친구 이름 입력...">
+    <button id="addBtn">추가</button>
+    <ul id="friendList">
+        <li>김구라</li>
+        <li>해골</li>
+    </ul>
+
+    <script>
+        /** 
+         * input 요소에 친구 이름 입력하고 추가 버튼을 누르면 해당 친구의 이름이
+         * #friendList에 추가되도록 만들어라.
+        */
+
+        /** 
+         * 실패코드의 일부
+         * let friendName = document.querySelector("#inputName").value
+         * document.querySelector("#addBtn").addEventListener("click",function(friendName){
+         *  ~~~....
+         * }
+        */
+        
+        document.querySelector("#addBtn").addEventListener("click",function(){
+            let friendName = document.querySelector("#inputName").value
+            let newFriendName = document.createElement("li");
+
+            newFriendName.innerText = friendName
+
+            document.querySelector("#friendList").append(newFriendName)
+        })
+
+        /** 
+         * 깨달은 점
+         * 1. global 영역에 input 값을 미리 구하는 변수를 선언하고 버튼 이벤트 함수 내에 파라미터로 적용했지만 실패했다.
+         * 이유는 global 영역의 경우 웹브라우저 로딩시점에 input은 아무것도 없는 상황에서 value값을 구했기 때문이다.
+        */
+    </script>
+</body>
+</html>

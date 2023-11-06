@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="메시지 입력">
+    <button id="sendBtn">전송</button>
+    <p id="result"></p>
+
+    <script>
+
+        /** 
+         * input 요소에 문자열을 입력하고 전송 버튼을 누르면 
+         * 입력한 문자열을 p요소의 innerText로 출력해보세요
+        */
+
+        document.querySelector("#sendBtn").addEventListener("click", function(){
+
+            // let msg = document.querySelector("#inputMsg").value
+            let msg2 = function(){
+                
+                let a=document.querySelector("#inputMsg").value;
+
+                return a
+            };
+        
+            document.querySelector("#result").innerText = msg2();
+        
+        })
+
+        /** 
+         * 느낀 점
+         * 1. 아직 호출시 #과 .이 익숙치 않고 있음
+         * 2. 변수값은 string 타입으로 설정하지 않기
+         * 3. function 사용시 return을 통해 꼭 반환시켜줘야 실행된다.
+        */
+
+    </script>
+</body>
+</html>

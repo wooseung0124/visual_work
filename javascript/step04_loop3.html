@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_loop.html</title>
+</head>
+<body>
+    <h1>반복문</h1>
+    <script>
+        let nums = [10,20,30,40,50];
+        // console.log(nums[0]);
+        // console.log(nums[1]);
+        // console.log(nums[2]);
+        // console.log(nums[3]);
+        // console.log(nums[4]);
+
+        /** 
+         * i 의 초기값은 0 이고 
+         * i가 5 보다 작은 동안에 
+         * i를 1씩 증가 시키면서 반복 실행하기
+         * => 5번 반복 수행된다.
+         * 
+         * for(let i = 0; i<5; i++){
+            console.log(nums[i]);
+        }
+
+        i의 사이즈 끝을 모를 경우는 length를 활용하라.
+
+        */
+        for(let i = 0; i<nums.length; i++){
+            console.log(nums[i]);
+        }
+
+        /** 
+         * ex)nums. 
+         * 예시까지 입력했을 때 자동으로 작은 창을 통해 여러 기능들이 나올 것이다.
+         * 
+         * 명령어를 입력할 때 미리보기창에 나오는 그림의 의미
+         * 보라색 정육면체 그림 : 함수(method)
+         * 파란색 직육면체 그림 : 저장소
+         * 
+        */
+       
+        nums.forEach(function(Item, index){
+            console.log("호출됨!");
+            console.log(Item);
+            console.log(index);
+        });
+
+        /** 
+         * 전달만하면 알아서 자동 호출하는 기능 : forEach
+         * 동작 원리 : (method) Array<number>.forEach(callbackfn: (value: number, index: number, array: number[]) => void, thisArg?: any): void
+         * 
+         * array 가 가지고 있는 forEach() 함수를 호출하면서 함수를 전달하면
+         * 전달한 함수는 배열의 아이템의 개수만큼 자동 호출되고
+         * 함수의 매개변수에 item과 index 값이 전달된다.
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        transition : transition 효과를 적용할 css property, 적용시간, timing function(변화율 함수)
+        transition : width 1s linear;
+        transition : height 1s ease-out;
+        transition : all 1s ease-out;
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            cursor: pointer;
+            transition: all 1s ease-out
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">click me!</div>
+
+    <script>
+        let w=100;
+        let h=100;
+        //.box div 를 클릭했을때 width , height 를 2배로 변경시켜 보세요
+        // document.querySelector(".box").addEventListener("click", function () {
+        //     document.querySelector(".box").style.width = "200px";
+        //     document.querySelector(".box").style.height = "200px";
+        //     document.querySelector(".box").style.marginLeft = "100px";
+        // });
+
+        // 궁금증 : 누를 때마다 2배씩 증가하는 방식으로 고치라면?
+        document.querySelector(".box").addEventListener("click", function(){
+            w *= 2;
+            h *= 2;
+
+            document.querySelector(".box").style.width = w+"px";
+            document.querySelector(".box").style.height = h+"px";
+        })
+
+        /** 
+         * 느낀 점
+         * head에 정의를 내린 style의 영역은 javascript로 건드릴 수 없다. 왜냐하면 javascript로 css로 건드리면
+         * inline css이기 때문에 반응도 없고 style 영역 css 값 조차 가져올 수 없다.
+         * 때문에 head 영역 style 속성은 클라이언트가 육안으로 보이는 첫 화면만 꾸미고
+         * 변화를 적용할 때는 script 영역 내에 개발자만 알아볼 수 있는 별도의 데이터를 변수로 적용해야한다.
+         * 어차피 'querySelector'로 원하는 요소 지정하고 값을 부여할 때는 string 타입으로 바꿔주면 되기에
+         * number type 값 + "string type 값" 형태로 할당하면 그만이다.
+        */
+    </script>
+
+</body>
+
+</html>

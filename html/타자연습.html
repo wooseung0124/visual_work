@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 780px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>회원가입 폼입니다.</h1>
+        <form action="login.html">
+            <label for="email">이메일</label>
+            <input type="text" id="email">
+
+            <fieldset>
+                <legend>성별 선택</legend>
+                <label>
+                    <input type="radio" name="gender" value="man">남자
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="woman">여자
+                </label>
+            </fieldset>
+            <button id="login">가입</button>
+        </form>
+
+        <fieldset>
+            <legend>취미 정보 선택</legend>
+            <label>
+                <input type="checkbox" name="soccer" value="soccer">축구
+            </label>
+            <label>
+                <input type="checkbox" name="baking" value="baking" checked>베이킹
+            </label>
+            <label>
+                <input type="checkbox" name="piano" value="piono">피아노
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="hobby">기타
+            </label>
+        </fieldset>
+
+        <label>직업</label>
+
+        <select name="job" id="job">
+            <option value="">선택</option>
+            <option value="programmer">프로그래머</option>
+            <option value="doctor">의사</option>
+            <option value="pianist" selected>피아니스트</option>
+            <option value="etc">기타</option>
+        </select>
+
+        <label for="lunch">점심시간</label>
+        <select name="lunch" id="lunch">점심시간
+            <optgroup label="분식">
+                <option>라면</option>
+                <option selected>쫄면</option>
+                <option>김밥</option>
+            </optgroup>
+            <optgroup label="중식">
+                <option>자장면</option>
+                <option>짬뽕</option>
+                <option>군만두</option>
+            </optgroup>
+        </select>
+
+        <br>
+        <label for="file">첨부파일</label>
+        <input type="file" id="file">
+        <br>
+        <label>하고 싶은 말</label>
+        <textarea name="" id=""></textarea>
+        <br>
+
+        <button type="submit">선택</button>
+
+    </div>
+
+    <script>
+        document.querySelector("textarea").style.width = "100%";
+        document.querySelector("textarea").style.height = "300px";
+    </script>
+</body>
+
+</html>

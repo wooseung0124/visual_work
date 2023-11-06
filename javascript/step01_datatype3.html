@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_DataType3.html</title>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1>
+    <p><strong>object</strong> type </p>
+
+    <script>
+
+        /*
+        한 명의 회원정보를 다루고자 한다
+        번호, 이름, 성별 여부
+        */
+
+       // 번호는 1이고 이름은 김구라이고 성별은 남자인 회원의 정보를 변수 3개에 각각 담아 보세요.
+       
+       let num = 1
+       let name = "김구라"
+       let isMan = true
+
+       // object 기능 : 여러 데이터를 한 묶음으로 관리한다.
+       // {key:value}
+       let mem1 = {a:1, b:"김구라", c:true};
+
+       // 더 보기 좋게 한줄로 작성하기
+       let mem2 = {num:1, name:"김구라", isMan:true};
+
+       // object는 데이터 타입은 문자도, 숫자도, boolean값 그 무엇도 아니다. object 타입으로 불린다.
+       // 그럼 object 에 들어간 값들은 어떻게 부를까?
+
+       // 여러 줄로 작성하기
+       let mem3 = {
+        num:2,
+        name:"해골",
+        isMan:false
+       };
+
+       // {key:value}
+       // object 에 데이터를 넣을 때 미리 만들어진 변수명으로 참조해서 넣을 수도 있다.
+       let mem4={num:num, name:name, isMan:isMan};
+
+       //위의 표현식을 줄여서 아래처럼 표현도 가능하다.
+       let mem5={num, name, isMan};
+
+       //a는 object type
+       let a = mem2;
+       //b는 number type
+       let b = mem2.num;
+       //c는 string type
+       let c = mem2.name;
+       //d는 boolean type
+       let d = mem2.isMan;
+
+
+       // 빈 object 를 만들고 나중에 필요에 따라서 데이터를 추가 할 수 있다.
+       let mem6 = {}
+       mem6.num=3;
+       mem6.name="원숭이";
+       mem6.isMan=true;
+
+       //이미 만들어져 있는 object에 저장된 값 수정하기
+       mem2.num=999;
+       mem2.name="이정호";
+
+       // object 변수명이 하나의 고유 열쇠라고 생각하자.
+
+       
+    </script>
+</body>
+</html>
